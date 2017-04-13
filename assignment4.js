@@ -29,14 +29,13 @@
 
 	).then(function() {
 		//clear and add all results
-		//result_glob.html("");
 		for(var i = 0; i < data.length; i++) {
 			result_glob.append("<li class='flexsearch-result'>" + data[i] + "</li>");
 		}
 
-		// bind input to autocomplete
+		// do autocomplete
 		in_glob.on("keyup", function(event){
-			// case insensitive
+
 			var input = in_glob.val().toLowerCase();
 			var results = [];
 
@@ -49,7 +48,7 @@
 				}
 			}
 
-			//clear results container
+			//clear results on update
 			result_glob.html("");
 			//display results
 			if(results.length) {
