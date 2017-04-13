@@ -49,6 +49,10 @@
   -moz-appearance: none;
 }
 
+.flexsearch-result {
+	font-family: 'Helvetica', sans-serif;
+}
+
 .flexsearch-submit {
   position: absolute;
   right: 0;

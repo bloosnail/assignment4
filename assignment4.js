@@ -3,8 +3,8 @@
 	var in_glob = $(".flexsearch-input").after("<ul class='flexsearch-results'></ul>");
 	// results/messages container
 	var result_glob = $(".flexsearch-results");
+	
 	// no data yet
-	result_glob.html("<p class='flexsearch-message'>No data loaded</p>");
 	var data = [];
 
 	//parse
@@ -29,7 +29,7 @@
 
 	).then(function() {
 		//clear and add all results
-		result_glob.html("");
+		//result_glob.html("");
 		for(var i = 0; i < data.length; i++) {
 			result_glob.append("<li class='flexsearch-result'>" + data[i] + "</li>");
 		}
@@ -42,7 +42,9 @@
 
 			for(var i  = 0; i < data.length; i++) {
 				// if substr exists in word, add it to results
-				if(data[i].toLowerCase.includes(input)) {
+				var tmp = data[i].toLowerCase();
+				
+				if(tmp.includes(input)) {
 					results.push(data[i]);
 				}
 			}
